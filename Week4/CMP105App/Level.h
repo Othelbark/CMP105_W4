@@ -35,9 +35,11 @@ private:
 	PlayerObject playerObject;
 	sf::Texture playerTexture;
 
-	// Enemy
+	// Enemies
 	EnemyObject enemyObject1;
 	sf::Texture enemyTexture1;
 
+	EnemyObject enemyObject2;
+	sf::Texture enemyTexture2;
 
 };
