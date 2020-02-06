@@ -3,7 +3,7 @@
 EnemyObject::EnemyObject()
 {
 	window = nullptr;
-	setVelocity(0.35, 0.75);
+	setVelocity(350, 750);
 }
 EnemyObject::~EnemyObject()
 {
@@ -61,5 +61,5 @@ void EnemyObject::update(float dt)
 		setPosition(xPos, 0);
 	}
 
-	move(velocity);
+	move(velocity * dt);
 }

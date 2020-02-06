@@ -50,6 +50,6 @@ void PlayerObject::handleInput(float dt)
 void PlayerObject::update(float dt)
 {
 	//Move based on velocity
-	move(velocity);
+	move(velocity * dt);
 	//setPosition(getPosition() + getVelocity());
 }

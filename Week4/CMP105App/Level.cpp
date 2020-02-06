@@ -21,7 +21,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	playerObject.setTexture(&playerTexture);
 	playerObject.setSize(sf::Vector2f(100, 100));
 	playerObject.setPosition(100, 100);
-	playerObject.setSpeed(0.6f);
+	playerObject.setSpeed(600);
 	playerObject.setInput(input);
 
 	//enemies
@@ -31,8 +31,8 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	enemyObject1.setPosition(500, 200);
 	enemyObject1.setWindow(window);
 
-	enemyTexture2.loadFromFile("gfx/icon.png");
-	enemyObject2.setTexture(&enemyTexture2);
+	//enemyTexture2.loadFromFile("gfx/icon.png");
+	enemyObject2.setTexture(&cursorTexture);
 	enemyObject2.setSize(sf::Vector2f(50, 50));
 	enemyObject2.setPosition(300, 600);
 	enemyObject2.setWindow(window);

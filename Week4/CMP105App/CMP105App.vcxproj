@@ -157,6 +157,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="EnemyObject.cpp" />
     <ClCompile Include="Framework\Input.cpp" />
@@ -170,6 +171,7 @@
     <Text Include="README.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="EnemyObject.h" />
     <ClInclude Include="Framework\Input.h" />
