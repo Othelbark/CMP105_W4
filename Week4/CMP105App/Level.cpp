@@ -31,11 +31,16 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	enemyObject1.setPosition(500, 200);
 	enemyObject1.setWindow(window);
 
-	//enemyTexture2.loadFromFile("gfx/icon.png");
 	enemyObject2.setTexture(&cursorTexture);
 	enemyObject2.setSize(sf::Vector2f(50, 50));
 	enemyObject2.setPosition(300, 600);
 	enemyObject2.setWindow(window);
+
+	//background
+	backgroundTexture.loadFromFile("gfx/Level1_1.png");
+	background.setTexture(&backgroundTexture);
+	background.setSize(sf::Vector2f(11038, 675));
+	
 
 }
 
@@ -75,6 +80,7 @@ void Level::render()
 {
 	beginDraw();
 
+	window->draw(background);
 	window->draw(playerObject);
 	window->draw(enemyObject1);
 	window->draw(enemyObject2);

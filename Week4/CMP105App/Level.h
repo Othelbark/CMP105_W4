@@ -5,6 +5,7 @@
 #include "Framework/GameObject.h"
 #include "PlayerObject.h"
 #include "EnemyObject.h"
+#include "Background.h"
 #include "Cursor.h"
 #include <string.h>
 #include <iostream>
@@ -45,5 +46,9 @@ private:
 
 	EnemyObject enemyObject2;
 	sf::Texture enemyTexture2;
+
+	// Background
+	Background background;
+	sf::Texture backgroundTexture;
 
 };
