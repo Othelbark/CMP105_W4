@@ -17,11 +17,11 @@ void EnemyObject::update(float dt)
 {
 
 	//bounce off edge
-	if (getPosition().x > window->getSize().x || getPosition().x < 0)
+	if (getPosition().x + getSize().x > window->getSize().x || getPosition().x < 0)
 	{
 		velocity.x *= -1;
 	}
-	if (getPosition().y > window->getSize().y || getPosition().y < 0)
+	if (getPosition().y + getSize().y > window->getSize().y || getPosition().y < 0)
 	{
 		velocity.y *= -1;
 	}
@@ -33,10 +33,10 @@ void EnemyObject::update(float dt)
 	float yPos = getPosition().y;
 
 	// If enemy has passed the right side
-	if (xPos > windowXSize)
+	if (xPos + getSize().x > windowXSize)
 	{
 		//dont go off the side
-		setPosition(windowXSize, yPos);
+		setPosition(windowXSize - getSize().x, yPos);
 	}
 	// If enemy has passed the left side
 	else if (xPos < 0)
@@ -49,10 +49,10 @@ void EnemyObject::update(float dt)
 	xPos = getPosition().x;
 
 	// If enemy has passed the bottom side
-	if (yPos > windowYSize)
+	if (yPos + getSize().y > windowYSize)
 	{
 		//dont go off the side
-		setPosition(xPos, windowYSize);
+		setPosition(xPos, windowYSize - getSize().y);
 	}
 	// If enemy has passed the left side
 	else if (yPos < 0)
