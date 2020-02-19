@@ -28,6 +28,10 @@ private:
 	// Default variables for level class.
 	sf::RenderWindow* window;
 	Input* input;
+	
+	// Veiw Object
+	sf::View view;
+	float viewScrollSpeed = 800.0f;
 
 	// Level objects
 

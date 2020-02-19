@@ -15,22 +15,22 @@ void PlayerObject::handleInput(float dt)
 	sf::Vector2f velocity (0,0);
 
 	//holding right
-	if (input->isKeyDown(sf::Keyboard::Right) || input->isKeyDown(sf::Keyboard::D))
+	if (input->isKeyDown(sf::Keyboard::Right))
 	{
 		velocity.x += 1;
 	}
 	//holding left
-	if (input->isKeyDown(sf::Keyboard::Left) || input->isKeyDown(sf::Keyboard::A))
+	if (input->isKeyDown(sf::Keyboard::Left))
 	{
 		velocity.x -= 1;
 	}
 	//holding down
-	if (input->isKeyDown(sf::Keyboard::Down) || input->isKeyDown(sf::Keyboard::S))
+	if (input->isKeyDown(sf::Keyboard::Down))
 	{
 		velocity.y += 1;
 	}
 	//holding up
-	if (input->isKeyDown(sf::Keyboard::Up) || input->isKeyDown(sf::Keyboard::W))
+	if (input->isKeyDown(sf::Keyboard::Up))
 	{
 		velocity.y -= 1;
 	}

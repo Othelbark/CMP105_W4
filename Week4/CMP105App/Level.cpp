@@ -4,6 +4,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 {
 	window = hwnd;
 	input = in;
+	view = window->getView();
 
 	window->setMouseCursorVisible(false);
 
@@ -15,6 +16,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	cursor.setSize(sf::Vector2f(30, 30));
 	cursor.setPosition(-50, -50);
 	cursor.setInput(input);
+	cursor.setView(&view);
 
 	//player
 	playerTexture.loadFromFile("gfx/Mushroom.png");
@@ -58,6 +60,30 @@ void Level::handleInput(float dt)
 		window->close();
 	}
 
+	// Get view change input
+	if (input->isKeyDown(sf::Keyboard::A))
+	{
+		view.move(-viewScrollSpeed * dt, 0);
+		float leftSide = view.getCenter().x - (view.getSize().x / 2);
+		//if view is all the way left
+		if (leftSide < 0) 
+		{
+			view.setCenter((view.getSize().x / 2), view.getCenter().y);
+		}
+	}
+	else if (input->isKeyDown(sf::Keyboard::D))
+	{
+		view.move(viewScrollSpeed * dt, 0);
+		float rightSide = view.getCenter().x + (view.getSize().x / 2);
+		float farRightSide = background.getPosition().x + background.getSize().x;
+		//if view is all the way right
+		if (rightSide > farRightSide)
+		{
+			view.setCenter(farRightSide - (view.getSize().x / 2), view.getCenter().y);
+		}
+	}
+
+
 	// Handle cursor input
 	cursor.handleInput(dt);
 	// Handle player input
@@ -78,6 +104,8 @@ void Level::update(float dt)
 // Render level
 void Level::render()
 {
+	window->setView(view);
+
 	beginDraw();
 
 	window->draw(background);
